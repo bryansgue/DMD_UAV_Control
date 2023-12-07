@@ -106,7 +106,7 @@ end
 vcp = [0;0;0;0];
 %% DYAMIC COMPENSATION
 vref(:,k) = dynamicComDMD_online(A_c_aux, B_c_aux, vcp, vc(:,k), v(:,k), 3, 4); %2 6
-vref(:,k) = vc(:,k);
+%vref(:,k) = vc(:,k);
 %% 2) DINAMICA DEL UAV (VELOCIDAD Y POSICION)
 %[v_real(:, k+1),Tu(:,k)] = dyn_model_adapUAV(chi_real, v_real(:,k), vref(:,k), psi(k), L, ts, k, F_extern(:, k));
 [v(:, k+1),Tu(:,k)] = DMD_dymamic_system(A,B,v(:,k), vref(:,k),ts,F_extern(:, k));
